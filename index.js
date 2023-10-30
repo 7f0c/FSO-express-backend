@@ -48,7 +48,7 @@ const morgan_logger = (tokens, req, res) => {
 }
 
 
-app.use(express.json(), morgan(morgan_logger), cors())
+app.use(express.static("build"), express.json(), morgan(morgan_logger), cors())
 
 
 app.head("/", (request, response) => {
